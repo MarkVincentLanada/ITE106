@@ -18,17 +18,15 @@ public class GFG {
 		// like \test as \t (ie. as a escape sequence)
 		
 		// Creating an object of BufferReader class
-		BufferReader br
-			= new BufferReader (new FileReader(file));
+		BufferReader br = new BufferReader (new FileReader(file));
 		
-		// 	Declaring a string variable
+		// Declaring a string variable
 		String st;
 		// Condition holds true till
 		// there is character in a string
-		while ((st = br.readLine()) != null)
-		
+		while ((st = br.readLine()) != null) {
 			// Print the string
 			System.out.println(st);
-			
+		}
 	}
 }
