@@ -6,7 +6,7 @@ import java.io.*;
  
 // Main class
 // ReadingFromFile
-public class GFG {
+public class TextFileManipulationFileReader {
  
     // Main driver method
     public static void main(String[] args) throws Exception
