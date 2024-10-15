@@ -5,7 +5,7 @@
 import java.io.*;
  
 // Main class
-public class TextFileManipulationBufferedReader.java {
+public class TextFileManipulationBufferedReader {
  
     // main driver method
     public static void main(String[] args) throws Exception
