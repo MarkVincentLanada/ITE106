@@ -1,4 +1,3 @@
-import java.util.Scanner;
 // Java Program to illustrate reading from FileReader
 // using Scanner Class reading entire File
 // without using loop
