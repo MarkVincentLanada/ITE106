@@ -13,7 +13,7 @@ public class ReadingEntireFileWithoutLoop
 		// we just need to use \\z as delimiter
 		sc.useDelimiter("\\z");
 		
-		System.out.println(sc.nextLine());
+		System.out.println(sc.next());
 	}
 }
 	
