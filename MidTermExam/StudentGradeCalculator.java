@@ -16,64 +16,64 @@ public class StudentGradeCalculator {
 		input.nextLine(); // to clear the newline character left in the buffer
 		
 		// create arrays to hold student information which size is equal to the number of students
-		String[] names = new String[studentCount];
-		char[] letterGrades = new char[studentCount];
-		int[] quiz1Grades = new int[studentCount];
-		int[] quiz2Grades = new int[studentCount];
-		int[] homework1Grades = new int[studentCount];
-		int[] homework2Grades = new int[studentCount];
-		int[] examGrades = new int[studentCount];
-		int[] averageGrades = new int[studentCount];
+		String[] name = new String[studentCount];
+		char[] letterGrade = new char[studentCount];
+		int[] quiz1Grade = new int[studentCount];
+		int[] quiz2Grade = new int[studentCount];
+		int[] homework1Grade = new int[studentCount];
+		int[] homework2Grade = new int[studentCount];
+		int[] examGrade = new int[studentCount];
+		int[] averageGrade = new int[studentCount];
 		
 		// take inputs name, quiz 1 and 2 grade, homework 1 and 2 grade, and exam grade
-		for (; currentStudent <= studentCount - 1; currentStudent++) {
+		for (; currentStudent < studentCount; currentStudent++) {
 			System.out.printf("Student %d Name? ", currentStudent + 1);
-			names[currentStudent] = StringInput();
+			name[currentStudent] = StringInput();
 			
-			System.out.printf("%s Quiz 1 Grade: ", names[currentStudent]);
-			quiz1Grades[currentStudent] = IntInput(true);
-			System.out.printf("%s Quiz 2 Grade: ", names[currentStudent]);
-			quiz2Grades[currentStudent] = IntInput(true);
+			System.out.printf("%s Quiz 1 Grade: ", name[currentStudent]);
+			quiz1Grade[currentStudent] = IntInput(true);
+			System.out.printf("%s Quiz 2 Grade: ", name[currentStudent]);
+			quiz2Grade[currentStudent] = IntInput(true);
 			
-			System.out.printf("%s Homework 1 Grade: ", names[currentStudent]);
-			homework1Grades[currentStudent] = IntInput(true);
-			System.out.printf("%s Homework 2 Grade: ", names[currentStudent]);
-			homework2Grades[currentStudent] = IntInput(true);
+			System.out.printf("%s Homework 1 Grade: ", name[currentStudent]);
+			homework1Grade[currentStudent] = IntInput(true);
+			System.out.printf("%s Homework 2 Grade: ", name[currentStudent]);
+			homework2Grade[currentStudent] = IntInput(true);
 			
-			System.out.printf("%s Exam Grade: ", names[currentStudent]);
-			examGrades[currentStudent] = IntInput(true);
+			System.out.printf("%s Exam Grade: ", name[currentStudent]);
+			examGrade[currentStudent] = IntInput(true);
 			input.nextLine();
 			
-			averageGrades[currentStudent] = (
-					quiz1Grades[currentStudent] +
-					quiz2Grades[currentStudent] +
-					homework1Grades[currentStudent] +
-					homework2Grades[currentStudent] +
-					examGrades[currentStudent]
+			averageGrade[currentStudent] = (
+					quiz1Grade[currentStudent] +
+					quiz2Grade[currentStudent] +
+					homework1Grade[currentStudent] +
+					homework2Grade[currentStudent] +
+					examGrade[currentStudent]
 					) / 5;
 			
-			if (averageGrades[currentStudent] > 94) {
-				letterGrades[currentStudent] = 'A';
+			if (averageGrade[currentStudent] > 94) {
+				letterGrade[currentStudent] = 'A';
 			}
-			else if (averageGrades[currentStudent] > 89) {
-				letterGrades[currentStudent] = 'B';
+			else if (averageGrade[currentStudent] > 89) {
+				letterGrade[currentStudent] = 'B';
 			}
-			else if (averageGrades[currentStudent] > 84) {
-				letterGrades[currentStudent] = 'C';
+			else if (averageGrade[currentStudent] > 84) {
+				letterGrade[currentStudent] = 'C';
 			}
-			else if (averageGrades[currentStudent] > 79) {
-				letterGrades[currentStudent] = 'D';
+			else if (averageGrade[currentStudent] > 79) {
+				letterGrade[currentStudent] = 'D';
 			}
-			else if (averageGrades[currentStudent] > 74) {
-				letterGrades[currentStudent] = 'E';
+			else if (averageGrade[currentStudent] > 74) {
+				letterGrade[currentStudent] = 'E';
 			}
 			else {
-				letterGrades[currentStudent] = 'F';
+				letterGrade[currentStudent] = 'F';
 			}
 		}
 		
-		for (currentStudent = 0; currentStudent <= studentCount - 1; currentStudent++) {
-			System.out.printf("%s - AVERAGE GRADE: %d - %s\n", names[currentStudent], averageGrades[currentStudent], letterGrades[currentStudent]);
+		for (currentStudent = 0; currentStudent < studentCount; currentStudent++) {
+			System.out.printf("%s - AVERAGE GRADE: %d - %s\n", name[currentStudent], averageGrade[currentStudent], letterGrade[currentStudent]);
 		}
 	}
 	
