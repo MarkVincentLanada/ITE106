@@ -1,4 +1,4 @@
-package MidtermExam;
+package MidtermExamITE106;
 
 import java.util.Scanner;
 import java.util.InputMismatchException;
@@ -8,7 +8,7 @@ public class StudentGradeCalculator {
 	
 	public static void main(String[] args) {
 		
-		int classAverage = 0;
+		float classAverage = 0;
 		int studentCount; // used to keep track of how many students there are 
 		int currentStudent = 0; // used to keep track of which student the following information is for/from
 		
@@ -19,12 +19,12 @@ public class StudentGradeCalculator {
 		// create arrays to hold student information which size is equal to the number of students
 		String[] name = new String[studentCount];
 		char[] letterGrade = new char[studentCount];
-		int[] quiz1Grade = new int[studentCount];
-		int[] quiz2Grade = new int[studentCount];
-		int[] homework1Grade = new int[studentCount];
-		int[] homework2Grade = new int[studentCount];
-		int[] examGrade = new int[studentCount];
-		int[] averageGrade = new int[studentCount];
+		float[] quiz1Grade = new float[studentCount];
+		float[] quiz2Grade = new float[studentCount];
+		float[] homework1Grade = new float[studentCount];
+		float[] homework2Grade = new float[studentCount];
+		float[] examGrade = new float[studentCount];
+		float[] averageGrade = new float[studentCount];
 		
 		// take inputs name, quiz 1 and 2 grade, homework 1 and 2 grade, and exam grade
 		for (; currentStudent < studentCount; currentStudent++) {
@@ -80,28 +80,26 @@ public class StudentGradeCalculator {
 		
 		// determine the lowest highest scores in class
 		int lowestGradeStudent = 0;
-		int lowestGrade = 0;
+		float lowestGrade = 0;
 		int highestGradeStudent = 0;
-		int highestGrade = 0;
+		float highestGrade = 0;
 		for (currentStudent = 0; currentStudent < studentCount; currentStudent++) {
 			if (lowestGrade == 0 || averageGrade[currentStudent] < lowestGrade) {
 				lowestGrade = averageGrade[currentStudent];
 				lowestGradeStudent = currentStudent;
-				currentStudent = 0;
 			}
 			if (highestGrade == 0 || averageGrade[currentStudent] > highestGrade) {
 				highestGrade = averageGrade[currentStudent];
 				highestGradeStudent = currentStudent;
-				currentStudent = 0;
 			}
 		}
 		
 		for (currentStudent = 0; currentStudent <= studentCount - 1; currentStudent++) {
-			System.out.printf("%s - AVERAGE GRADE: %d - %s\n", name[currentStudent], averageGrade[currentStudent], letterGrade[currentStudent]);
+			System.out.printf("%s - AVERAGE GRADE: %.2f - %s\n", name[currentStudent], averageGrade[currentStudent], letterGrade[currentStudent]);
 		}
-		System.out.printf("CLASS AVERAGE: %d\n", classAverage);
-		System.out.printf("LOWEST GRADE: %s - %d\n", name[lowestGradeStudent], lowestGrade);
-		System.out.printf("HIGHEST GRADE: %s - %d\n", name[highestGradeStudent], highestGrade);
+		System.out.printf("CLASS AVERAGE: %.2f\n", classAverage);
+		System.out.printf("LOWEST GRADE: %s - %.2f\n", name[lowestGradeStudent], lowestGrade);
+		System.out.printf("HIGHEST GRADE: %s - %.2f\n", name[highestGradeStudent], highestGrade);
 	}
 	
 	public static int IntInput(boolean isGrade) {
