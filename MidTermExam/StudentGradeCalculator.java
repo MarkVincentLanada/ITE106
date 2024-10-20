@@ -84,15 +84,15 @@ public class StudentGradeCalculator {
 		int highestGradeStudent = 0;
 		int highestGrade = 0;
 		for (currentStudent = 0; currentStudent < studentCount; currentStudent++) {
-			if (lowestGrade == 0 || averageGrade[i] < lowestGrade) {
-				lowestGrade = averageGrade[i];
-				lowestGradeStudent = i;
-				i = 0;
+			if (lowestGrade == 0 || averageGrade[currentStudent] < lowestGrade) {
+				lowestGrade = averageGrade[currentStudent];
+				lowestGradeStudent = currentStudent;
+				currentStudent = 0;
 			}
-			if (highestGrade == 0 || averageGrade[i] > highestGrade) {
-				highestGrade = averageGrade[i];
-				highestGradeStudent = i;
-				i = 0;
+			if (highestGrade == 0 || averageGrade[currentStudent] > highestGrade) {
+				highestGrade = averageGrade[currentStudent];
+				highestGradeStudent = currentStudent;
+				currentStudent = 0;
 			}
 		}
 		
@@ -152,3 +152,13 @@ public class StudentGradeCalculator {
 		}
 	}
 }
+
+
+
+
+
+
+
+
+
+// LANADA
