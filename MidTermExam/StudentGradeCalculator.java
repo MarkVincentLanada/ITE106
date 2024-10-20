@@ -27,7 +27,7 @@ public class StudentGradeCalculator {
 		int[] averageGrade = new int[studentCount];
 		
 		// take inputs name, quiz 1 and 2 grade, homework 1 and 2 grade, and exam grade
-		for (; currentStudent <= studentCount - 1; currentStudent++) {
+		for (; currentStudent < studentCount; currentStudent++) {
 			System.out.printf("Student %d Name? ", currentStudent + 1);
 			name[currentStudent] = StringInput();
 			
