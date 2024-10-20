@@ -8,6 +8,7 @@ public class StudentGradeCalculator {
 	
 	public static void main(String[] args) {
 		
+		int classAverage = 0;
 		int studentCount; // used to keep track of how many students there are 
 		int currentStudent = 0; // used to keep track of which student the following information is for/from
 		
@@ -26,7 +27,7 @@ public class StudentGradeCalculator {
 		int[] averageGrade = new int[studentCount];
 		
 		// take inputs name, quiz 1 and 2 grade, homework 1 and 2 grade, and exam grade
-		for (; currentStudent < studentCount; currentStudent++) {
+		for (; currentStudent <= studentCount - 1; currentStudent++) {
 			System.out.printf("Student %d Name? ", currentStudent + 1);
 			name[currentStudent] = StringInput();
 			
@@ -70,11 +71,37 @@ public class StudentGradeCalculator {
 			else {
 				letterGrade[currentStudent] = 'F';
 			}
+			
+			// compute class average
+			classAverage += averageGrade[currentStudent];
+		}
+		classAverage /= studentCount;
+		System.out.println("==================");
+		
+		// determine the lowest highest scores in class
+		int lowestGradeStudent = 0;
+		int lowestGrade = 0;
+		int highestGradeStudent = 0;
+		int highestGrade = 0;
+		for (int i = 0; i < studentCount - 1; i++) {
+			if (lowestGrade == 0 || averageGrade[i] < lowestGrade) {
+				lowestGrade = averageGrade[i];
+				lowestGradeStudent = i;
+				i = 0;
+			}
+			if (highestGrade == 0 || averageGrade[i] > highestGrade) {
+				highestGrade = averageGrade[i];
+				highestGradeStudent = i;
+				i = 0;
+			}
 		}
 		
-		for (currentStudent = 0; currentStudent < studentCount; currentStudent++) {
+		for (currentStudent = 0; currentStudent <= studentCount - 1; currentStudent++) {
 			System.out.printf("%s - AVERAGE GRADE: %d - %s\n", name[currentStudent], averageGrade[currentStudent], letterGrade[currentStudent]);
 		}
+		System.out.printf("CLASS AVERAGE: %d\n", classAverage);
+		System.out.printf("LOWEST GRADE: %s - %d\n", name[lowestGradeStudent], lowestGrade);
+		System.out.printf("HIGHEST GRADE: %s - %d\n", name[highestGradeStudent], highestGrade);
 	}
 	
 	public static int IntInput(boolean isGrade) {
