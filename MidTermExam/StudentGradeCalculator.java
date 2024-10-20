@@ -76,7 +76,6 @@ public class StudentGradeCalculator {
 			classAverage += averageGrade[currentStudent];
 		}
 		classAverage /= studentCount;
-		System.out.println("==================");
 		
 		// determine the lowest highest scores in class
 		int lowestGradeStudent = 0;
@@ -94,6 +93,7 @@ public class StudentGradeCalculator {
 			}
 		}
 		
+		System.out.println("==================");
 		for (currentStudent = 0; currentStudent <= studentCount - 1; currentStudent++) {
 			System.out.printf("%s - AVERAGE GRADE: %.2f - %s\n", name[currentStudent], averageGrade[currentStudent], letterGrade[currentStudent]);
 		}
