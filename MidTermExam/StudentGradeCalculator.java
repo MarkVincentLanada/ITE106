@@ -1,5 +1,3 @@
-package MidtermExamITE106;
-
 import java.util.Scanner;
 import java.util.InputMismatchException;
 
