@@ -83,7 +83,7 @@ public class StudentGradeCalculator {
 		int lowestGrade = 0;
 		int highestGradeStudent = 0;
 		int highestGrade = 0;
-		for (int i = 0; i < studentCount - 1; i++) {
+		for (currentStudent = 0; currentStudent < studentCount; currentStudent++) {
 			if (lowestGrade == 0 || averageGrade[i] < lowestGrade) {
 				lowestGrade = averageGrade[i];
 				lowestGradeStudent = i;
