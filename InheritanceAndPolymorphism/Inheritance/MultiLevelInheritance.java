@@ -1,5 +1,7 @@
 // Level 1: Base Class/Super Class
 class Animal {
+	String inheritance = "Hotdog";
+	
 	public void eat() {
 		String someAnimal = "Animal Class\n";
 		System.out.println("Animal is eating");
@@ -8,6 +10,9 @@ class Animal {
 
 // Level 2: Derived Class (Subclass of Animal, Parent Class of Dog)
 class Mammal extends Animal {
+	// the 'super' keyword pertains or points to the CURRENT PARENT CLASS, not the top-most SUPER CLASS.
+	String anotherInheritance = super.inheritance;
+	
 	public void breathe() {
 		String someMammal = "Mammal Class\n";
 		System.out.println("Mammal breathes air");
@@ -16,6 +21,8 @@ class Mammal extends Animal {
 
 // Level 3: Derived Class (Subclass of Mammal, Parent Class of Bulldog)
 class Dog extends Mammal {
+	String secondInheritance = "Bye bye";
+	
 	public void bark() {
 		String someDog = "Dog Class\n";
 		System.out.println("Dog barks");
@@ -24,6 +31,9 @@ class Dog extends Mammal {
 
 // Level 4: Derived Class (Subclass of Dog, Parent Class of BabyBulldog)
 class Bulldog extends Dog {
+	// the 'super' keyword pertains or points to the CURRENT PARENT CLASS, not the top-most SUPER CLASS.
+	String thirdInheritance = super.secondInheritance;
+	
 	public void guard() {
 		String someBulldog = "Bulldog Class\n";
 		System.out.println("Bulldog is guarding the house");
