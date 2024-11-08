@@ -5,7 +5,8 @@ public class Person {
     // cannot be access 
     private String name
     private int age;
-    
+
+    // initialize variables
     public Person(String name, int age) {
         this.name = name;
         this.age = age;
