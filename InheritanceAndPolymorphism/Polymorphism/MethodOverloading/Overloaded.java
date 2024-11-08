@@ -1,6 +1,6 @@
 package project;
 
-public class MethodOverloading {
+public class Overloaded {
 	public static void main(String[] args) {
 		OverloadedClass OC = new OverloadedClass();
 		// different parameters leads to different methods/constructor being run
