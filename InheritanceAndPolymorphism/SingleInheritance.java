@@ -13,14 +13,14 @@ class Father {
 
 // Level 2: Derived Class (Subclass of Animal, Parent Class of Dog)
 class Son extends Father {
-	String Features = super.Features;
-	String EyeColor = super.EyeColor;
-	int Money = super.Money / 100;
+	String FeaturesDin = super.Features;
+	String EyeColorDin = super.EyeColor;
+	int MoneyDin = super.Money / 100;
 	
 	public void printSonFeatures() {
-		System.out.println(Features);
-		System.out.println(EyeColor);
-		System.out.println(Money);
+		System.out.println(FeaturesDin);
+		System.out.println(EyeColorDin);
+		System.out.println(MoneyDin);
 	}
 }
 
