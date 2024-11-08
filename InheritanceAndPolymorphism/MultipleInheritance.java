@@ -48,6 +48,6 @@ public class MultipleInheritance {
 		babyBulldog.breathe();    // Inherited from Mammal
 		babyBulldog.bark();       // Inherited from Dog
 		babyBulldog.guard();	  // Inherited from Bulldog
-		babyBulldog.play();		  // Inherited from BabyBulldog
+		babyBulldog.play();	  // Inherited from BabyBulldog
 	}
 }
