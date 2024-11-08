@@ -22,5 +22,6 @@ public class OverloadedClass {
 	public void giveValue(float decimal) {
 		System.out.println("You gave me a decimal: " + decimal);
 	}
-	// but they all have the SAME NAME. Hence, overloading
+	// but they all have the SAME METHOD NAME. Hence, METHOD OVERLOADING
+	// which will run? the method that will run is BASED on what the ARGUMENT passed unto the method's PARAMETER
 }
