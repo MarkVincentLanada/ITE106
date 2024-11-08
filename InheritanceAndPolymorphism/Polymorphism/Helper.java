@@ -1,13 +1,23 @@
+package project;
+
 public class OverloadedClass {
-	public void giveMeValue(String text) {
+	public void giveValue(String text) {
 		System.out.println("You gave me a text: " + text);
 	}
 	
-	public void giveMeValue(int number) {
-		System.out.println("You gave me a text: " + number);
+	public void giveValue(int number) {
+		System.out.println("You gave me a number: " + number);
 	}
 	
-	public void giveMeValue(boolean bool) {
-		System.out.println("You gave me a text: " + bool);
+	public void giveValue(boolean bool) {
+		System.out.println("You gave me a boolean: " + bool);
+	}
+	
+	public void giveValue(char character) {
+		System.out.println("You gave me a character: " + character);
+	}
+	
+	public void giveValue(float decimal) {
+		System.out.println("You gave me a decimal: " + decimal);
 	}
 }
