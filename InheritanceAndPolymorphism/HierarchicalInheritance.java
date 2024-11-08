@@ -2,7 +2,7 @@ class Parent {
 	String EyeColor = "Green";
 	String HairColor = "Blonde";
 	String Nose = "Matangos";
-	float Height = 5.1; // feet
+	float Height = 5.1f; // feet
 }
 
 class Child1 extends Parent {
