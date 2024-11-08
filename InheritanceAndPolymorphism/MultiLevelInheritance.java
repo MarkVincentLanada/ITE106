@@ -38,7 +38,7 @@ class BabyBulldog extends Bulldog {
 	}
 }
 
-public class MultipleInheritance {
+public class MultiLevelInheritance {
 	public static void main(String[] args) {
 		// Create an object of the BabyBulldog class
 		BabyBulldog babyBulldog = new BabyBulldog();
