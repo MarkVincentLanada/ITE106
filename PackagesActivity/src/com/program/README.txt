@@ -19,3 +19,4 @@ PackagesActivity/  <-- This is the root folder of your project
             └── README.txt
             └── AccessAll.java
 _________________________________________________________________________________________________________
+HAPPY CODING MGA BETLOG
