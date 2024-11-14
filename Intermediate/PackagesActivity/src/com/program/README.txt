@@ -19,9 +19,7 @@ PackagesActivity/  <-- This is the root folder of your project
             └── README.txt
             └── AccessAll.java
 _________________________________________________________________________________________________________
-So pwede niyo baguhin yung 'program' at lahat ng nasa loob noon. kahit ung 'program' pwede niyo paltan pangalan kayo bahala.
-Pero lahat ng folders and programs niyo lagay niyo sa loob noong 'program' na folder or kung anong pangalan na ipapalit niyo sa
-'program' na folder. ang 'src' kailangan talaga yan. and 'com' optional pero recommended din. At yung 'PackagesActivity' ginawa
-ko kasi kung kunwari marami kayo project folder, di naman pwedeng marami kayong 'src' na folder bawal man un. Kaya nilagay kko ung 'src' sa sariling folder niya na 'PackagesActivity'.
+So pwede niyo baguhin yung 'program' at lahat ng nasa loob noon. kahit ung 'program' pwede niyo paltan pangalan kayo bahala. Pero lahat ng folders and programs niyo lagay niyo sa loob noong 'program' na folder or kung anong pangalan na ipapalit niyo sa 'program' na folder. ang 'src' kailangan talaga yan. and 'com' optional pero recommended din. At yung 'PackagesActivity' ginawa ko kasi kung kunwari marami kayo project folder, di naman pwedeng marami kayong 'src' na folder bawal man un. Kaya nilagay ko ung 'src' sa sariling folder niya na 'PackagesActivity'.
+ALSO. Mahirap mag compile ng isahan, mahaba ung command. Kaya gawin niyo na muna mano mano haha. Mag compile kayo per file. Ang pag compile is yung 'javac'. or research research na lang
 _________________________________________________________________________________________________________
 HAPPY CODING MGA BETLOG
