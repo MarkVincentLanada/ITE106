@@ -1,9 +1,9 @@
 // part of the 'program' package
-package com.example.model;
+package com.program.model;
 
 public class Person {
     // cannot be access 
-    private String name
+    private String name;
     private int age;
 
     // initialize variables
