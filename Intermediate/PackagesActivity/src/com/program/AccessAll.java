@@ -11,7 +11,7 @@ public class AccessAll {
         Person pogi = new Person("Bong", 25);
         
         // Use the Helper class to print the Person's info
-		Helper help = new Helper();
+	Helper help = new Helper();
         help.printPersonInfo(pogi.getName(), pogi.getAge());
     }
 }
