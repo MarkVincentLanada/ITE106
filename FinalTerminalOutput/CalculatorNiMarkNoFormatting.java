@@ -109,7 +109,7 @@ public class CalculatorNiMarkNoFormatting extends JFrame implements ActionListen
 				historyDisplay.setText("History:\n" + history);
 			}
 			catch (IOException e1) {
-				e1.printStackTrace();
+				e1.printStackTrace();																																																																																																																							                                                                                                                                                                                                                                                                                                                                                          			// Gawa ni Mark Vincent D. Lanada BSCS2A
 			}
 		}
 		//===================If Input is NOT A Digit, Dot (.) or Equal Sign (=)======================//
