@@ -168,6 +168,6 @@ public class CalculatorNiMarkNoFormatting extends JFrame implements ActionListen
 		writer.write("");
 		writer.close();
 		
-		new CalculatorNiMark();
+		new CalculatorNiMarkNoFormatting();
 	}
 }
