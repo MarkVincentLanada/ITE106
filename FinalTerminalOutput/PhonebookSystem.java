@@ -159,6 +159,7 @@ public class PhonebookSystem extends JFrame implements ActionListener {
 			//===================Read FROM File======================//
 			BufferedReader reader = new BufferedReader(new FileReader(filename));
 			while ((line = reader.readLine()) != null) {
+				// e load lang lahat ng data from the file into a single String variable na separated by line separator (\r\n)
 				contacts += line + System.lineSeparator();
 			}
 			reader.close();
@@ -166,6 +167,7 @@ public class PhonebookSystem extends JFrame implements ActionListener {
 		catch (IOException e) {
 			e.printStackTrace();
 		}
+		// update yung display area gamit ang variable contacts na nag hohold ng lahat ng data, automatic na ang line sepratation dahil may line separator na dinagdag sa while loop
 		displayArea.setText(contacts);
 	}
 	
@@ -174,8 +176,8 @@ public class PhonebookSystem extends JFrame implements ActionListener {
 		String line;
 		String contacts = "";
 		String[] splitLine;
-		boolean alreadyExists = false;
 		
+		// e clear yung variable na ito
 		selectedContact = "";
 		
 		try {
@@ -190,23 +192,18 @@ public class PhonebookSystem extends JFrame implements ActionListener {
 			
 			while ((line = reader.readLine()) != null) {
 				splitLine = line.split(":");
-				
-				if (splitLine[0].equals(name) && splitLine[1].equals(phone)) {
-					alreadyExists = true;
-					break;
+
+				// check kung equal ba yung line sa file sa hinahanap idadagdag natin na bagong contact
+				if (splitLine[0].equals(name) && splitLine[1].equals(phone)) { // kung true, ibig sabihin may existing contact na tayo na same sa idadagdag natin
+					eventField.setText("Contact Already Exist");
+					reader.close();
+					return; // abort/stop na agad ang method
 				}
 				contacts += line + System.lineSeparator();
 			}
-			
-			if (alreadyExists) {
-				eventField.setText("Contact Already Exist");
-				reader.close();
-				return;
-			}
-			else {
-				eventField.setText("Contact Added");
-			}
-			
+
+			// kung wala pang existing contact na same sa idadagdag ay idagdag yung bagong contact
+			eventField.setText("Contact Added");
 			contacts += name + ":" + phone;
 			
 			//===================Write INTO File======================//
@@ -229,7 +226,8 @@ public class PhonebookSystem extends JFrame implements ActionListener {
 		String contacts = "";
 		String[] splitLine;
 		boolean alreadyExists = false;
-		
+
+		// e clear yung variable na ito
 		selectedContact = "";
 		
 		try {
@@ -245,17 +243,18 @@ public class PhonebookSystem extends JFrame implements ActionListener {
 			while ((line = reader.readLine()) != null) {
 				splitLine = line.split(":");
 				
+				// check kung merong existing contact na same sa hinahanap natin
 				if (splitLine[0].equals(name) && splitLine[1].equals(phone)) {
 					alreadyExists = true;
-					continue;
+					continue; // kung meron ay e skip yung line na yun para hindi idagdag sa contacts na variable
 				}
 				contacts += line + System.lineSeparator();
 			}
 			
-			if (alreadyExists) {
+			if (alreadyExists) { // dinagdag yung sinearch na contact sa pinakaunahan para pinakaunang lalabas sa display field
 				eventField.setText("Contact Searched");
 				contacts = name + ":" + phone + System.lineSeparator() + contacts;
-			}
+			} // kung wala abort/stop na lang ang method
 			else {
 				eventField.setText("Contact does not exist");
 				reader.close();
@@ -283,6 +282,7 @@ public class PhonebookSystem extends JFrame implements ActionListener {
 		String[] splitLine;
 		boolean contactExist = false;
 		
+		// e clear yung variable na ito
 		selectedContact = "";
 		
 		try {
@@ -298,9 +298,10 @@ public class PhonebookSystem extends JFrame implements ActionListener {
 			while ((line = reader.readLine()) != null) {
 				splitLine = line.split(":");
 				
+				// check kung merong existing contact na same sa hinahanap natin
 				if (splitLine[0].equals(name) && splitLine[1].equals(phone)) {
 					contactExist = true;
-					continue;
+					continue; // simple skip the line para hindi idagdag sa contacts variable. Deleted na yun agad dito kasi di na natin sinama sa final contacts list.
 				}
 				contacts += line + System.lineSeparator();
 			}
@@ -329,7 +330,6 @@ public class PhonebookSystem extends JFrame implements ActionListener {
 	public void selectContact(String name, String phone) {
 		
 		String line;
-		String contacts = "";
 		String[] splitLine;
 
 		try {
@@ -345,29 +345,21 @@ public class PhonebookSystem extends JFrame implements ActionListener {
 			while ((line = reader.readLine()) != null) {
 				splitLine = line.split(":");
 				
+				// check kung merong existing contact na same sa hinahanap natin
 				if (splitLine[0].equals(name) && splitLine[1].equals(phone)) {
-					searchContact(name, phone);
-					selectedContact = name + ":" + phone;
+					searchContact(name, phone); // cinall yung isang method para e display yung selected contact sa pinaka taas or pinaka una
+					selectedContact = name + ":" + phone; // then inassign na yung contact na yun sa selected contact na variable
 					eventField.setText("Contact selected: " + name + ":" + phone);
 					return;
 				}
-				contacts += line + System.lineSeparator();
 			}
-			
+			// kung di natin mahanap yung contact na yun walang gagawin sa file or di-display na iba aside from "Contact does not exist".
 			eventField.setText("Contact does not exist");
-			
-			//===================Write INTO File======================//
-			BufferedWriter writer = new BufferedWriter(new FileWriter(filename));
-			writer.write(contacts);
-			
 			reader.close();
-			writer.close();
 		}
 		catch (IOException e) {
 			e.printStackTrace();
 		}
-		
-		loadContacts();
 	}
 	
 	public void updateContact(String name, String phone) {
@@ -376,7 +368,8 @@ public class PhonebookSystem extends JFrame implements ActionListener {
 		String contacts = "";
 		String[] splitLine;
 		String[] splitSelectedContact;
-		
+
+		// dapat may selected contact kung mag a update tayo
 		if (selectedContact.isEmpty()) {
 			eventField.setText("No contact selected - Please select a contact");
 			return;
@@ -396,18 +389,25 @@ public class PhonebookSystem extends JFrame implements ActionListener {
 				splitLine = line.split(":");
 				splitSelectedContact = selectedContact.split(":");
 				
+				// hahanapin yung existing contact na same sa e a-update natin
 				if (splitLine[0].equals(splitSelectedContact[0]) && splitLine[1].equals(splitSelectedContact[1])) {
+					// set natin yung text sa event field into "(selected contact) updated to (new contact)"
 					eventField.setText(
 							"Contact: " + 
 							splitSelectedContact[0] + ":" + splitSelectedContact[1] + 
-							" updated to " + name + ":" + phone);
+							" updated to " + name + ":" + phone
+					);
+					// then e assign na yung bagong contact sa selectedContact
 					selectedContact = name + ":" + phone;
+					// e skip yung line na yun at hindi idadagdag sa final output yung previous na contact kasi binago na natin
 					continue;
 				}
 				
 				contacts += line + System.lineSeparator();
 			}
-			
+
+			// dito na natin nilagay yung bagong data sa unahan, pinaka unang lalabas siya.
+			// So yung naka display kaninang selected na contact ay mapapaltan na nung bagong contact
 			contacts = selectedContact + System.lineSeparator() + contacts;
 			selectedContact = "";
 			
