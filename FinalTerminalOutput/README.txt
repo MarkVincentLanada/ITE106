@@ -1,3 +1,4 @@
 - Copy code into IDE
-- Compile using 'javac filename.java'
-- Run the program using 'java filename.java'
+- Open command line (cmd) on the directory where the program is saved
+- Using cmd - Compile using 'javac filename.java'
+- Using cmd - Run the program using 'java filename.java'
