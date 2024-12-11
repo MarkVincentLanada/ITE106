@@ -1,17 +1,15 @@
-package phonebook;
-
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
 import java.io.*;
 
-public class PhonebookSystemNoFormatting extends JFrame implements ActionListener {
+public class PhonebookSystem extends JFrame implements ActionListener {
 	
 	private JTextField eventField, nameField, phoneField;
 	private JTextArea displayArea;
 	private String filename = "phonebook.txt", selectedContact = "";
 	
-	public PhonebookSystemNoFormatting() {
+	public PhonebookSystem() {
 		//===================Main Frame ng GUI=================//
 		setTitle("Phonebook System");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -66,10 +64,23 @@ public class PhonebookSystemNoFormatting extends JFrame implements ActionListene
 		// e-clear lang yung nakasulat
 		eventField.setText("");
 		
+		//
 		// Kung may empty kahit isa sa name or phone number. Disregard lang yung command
 		if (nameField.getText().isEmpty() || phoneField.getText().isEmpty()) {
 			eventField.setText("Input field(s) are empty");
 			return;
+		}
+		// Kung kulang ang input sa phone number
+		else if (phoneField.getText().length() != 11 || !phoneField.getText().startsWith("09")) {
+			eventField.setText("Phone number must be 11 digits long starting from 09");
+			return;
+		}
+		// Check kung lahat ba ng input sa phone number ay digits
+		for (char c : phoneField.getText().toCharArray()) {
+			if (!Character.isDigit(c)) {
+				eventField.setText("Phone number must contain only digits");
+				return;
+			}
 		}
 		
 		if (command.equals("Add")) {
@@ -367,7 +378,8 @@ public class PhonebookSystemNoFormatting extends JFrame implements ActionListene
 		
 		loadContacts();
 	}
+	
 	public static void main(String[] args) {
-		new PhonebookSystemNoFormatting();
+		new PhonebookSystem();
 	}
 }
