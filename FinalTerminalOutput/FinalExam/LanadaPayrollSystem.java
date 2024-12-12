@@ -12,7 +12,7 @@ public class LanadaPayrollSystem extends JFrame implements ActionListener {
 	public JTextField eventsDisplay, employeeID, employeeName, hourlyRate, hoursWorked, grossPay, taxRate, taxDeduction, netPay;
 	public JTextArea recordDisplay;
 	public String previousEmployeeID, previousEmployeeName, previousHourlyRate, previousHoursWorked, previousTaxRate;
-	String filename = "payrollDatafile.txt";
+	String filename = "PayrollDatafile.txt";
 	
 	// link sa design layout ko, na sinunod ko (kinda) sa paggawa ng GUI - https://excalidraw.com/#json=PT5eN-oxhZ0pEwzQJeYKu,U6FnVaPMGv_nayrF4ql62g
 	
